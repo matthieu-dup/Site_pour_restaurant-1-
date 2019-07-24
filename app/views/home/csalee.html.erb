@@ -1,0 +1,590 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-4 mb-5" id="mainNav">
+  <div class="container">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csalee_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="activePage">    
+              Crêpes salées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csucree_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Crêpes sucrées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_milkshake_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Milkshake 
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_smoothie_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Smoothie  
+            </h3>              
+          <% end %>  
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <!-- Reduce screen -->
+  <div class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none">
+    <div class="container">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csalee_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="activePage2">    
+              Crêpes salées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csucree_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Crêpes sucrées  
+            </h3>              
+          <% end %>  
+        </li>
+        
+        <li class="nav-item px-lg-4">
+          <%= link_to home_milkshake_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Milkshake 
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_smoothie_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Smoothie  
+            </h3>              
+          <% end %>  
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Contents -->
+<div class="container"> 
+     
+  <!-- Image -->
+  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mb-5"> 
+    <%= image_tag("11.png", class:"activePageImage") %>          
+  </div>
+
+  <b class="text6">Crêpes composées : (7.50€)</b>
+
+  <!-- La Mac -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">La Mac :</b>
+
+      <button class="btn btn-primary float-right">
+      <%= form_for @item_new do |f|%>
+        <%= f.hidden_field :name, value: 'Crêpe salée, la mac' %>
+        <%= f.hidden_field :content, value: 'Emmental, cheddar, viande hachée, oignons rouges, cornichons, salade, sauce mac.' %> 
+        <%= f.hidden_field :unit_price, value: '7.5'%>
+        <%= f.hidden_field :quantity_quantity, value: '1' %> 
+        <%= f.submit "Ajouter au panier", :class => 'btnSansEffet' %>
+      <% end %>
+    </button>
+
+      <h5>Emmental, cheddar, viande hachée, oignons rouges, cornichons, salade, sauce mac.</h5>
+      
+    </div>   
+  </div>
+  <!-- La Salmon -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">La Salmon :</b>
+
+      <button class="btn btn-primary float-right">
+        <%= form_for @item_new do |f|%>
+          <%= f.hidden_field :name, value: 'Crêpe salée, la salmon' %>
+          <%= f.hidden_field :content, value: 'Emmental, mozzarella, crème fraîche, pommes de terre, saumon.' %> 
+          <%= f.hidden_field :unit_price, value: '7.5'%>
+          <%= f.hidden_field :quantity_quantity, value: '1' %> 
+          <%= f.submit "Ajouter au panier", :class => 'btnSansEffet' %>
+        <% end %>
+      </button>
+
+      <h5>Emmental, mozzarella, crème fraîche, pommes de terre, saumon.</h5>
+      
+    </div>   
+  </div>
+  <!-- La Chicken -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">La Chicken :</b>
+
+      <button class="btn btn-primary float-right">
+        <%= form_for @item_new do |f|%>
+          <%= f.hidden_field :name, value: 'Crêpe salée, la chicken' %>
+          <%= f.hidden_field :content, value: 'Emmental, mozzarella, cheddar, chicken, oignons frits, sauce curry.' %> 
+          <%= f.hidden_field :unit_price, value: '7.5'%>
+          <%= f.hidden_field :quantity_quantity, value: '1' %> 
+          <%= f.submit "Ajouter au panier", :class => 'btnSansEffet' %>
+        <% end %>
+      </button>
+
+      <h5>Emmental, mozzarella, cheddar, chicken, oignons frits, sauce curry.</h5>
+      
+    </div>   
+  </div>
+  <!-- La Raclette -->
+  <div class="card bg-default mt-5 py-2 mb-5">    
+    <div class="card-body">
+
+      <b class="text5">La Raclette :</b>
+
+      <button class="btn btn-primary float-right">
+        <%= form_for @item_new do |f|%>
+          <%= f.hidden_field :name, value: 'Crêpe salée, la raclette' %>
+          <%= f.hidden_field :content, value: 'Emmental, mozzarella, raclette, dinde fumée, lardons, crème fraîche, pomme de terre.' %> 
+          <%= f.hidden_field :unit_price, value: '7.5'%>
+          <%= f.hidden_field :quantity_quantity, value: '1' %> 
+          <%= f.submit "Ajouter au panier", :class => 'btnSansEffet' %>
+        <% end %>
+      </button>
+
+      <h5>Emmental, mozzarella, raclette, dinde fumée, lardons, crème fraîche, pomme de terre.</h5>
+      
+    </div>   
+  </div>
+
+
+  <b class="text6">Crêpe personnalisée : (3.50€)</b>
+
+  <!-- Base -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">Bases: (+1€)</b>
+      
+      <button class="btn btn-secondary dropdown-toggle float-right" data-toggle="dropdown">
+        Ingrédients
+      </button>
+      <div class="dropdown-menu" >
+        <a class="dropdown-item">
+        <button onclick="whichBase('1')">Salsa</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichBase('2')">Crème fraîche</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichBase('3')">Boursin</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichBase('4')">Oeuf</button>
+        </a>
+      </div>
+ 
+      <h5 id="message1"></h5> 
+
+      <script type="text/javascript">
+
+        var ingredient1 = 0;
+        var ingredient2 = 0;
+        var ingredient3 = 0;
+        var ingredient4 = 0;
+        var virgule = "";
+
+        function whichBase(nb)
+        {
+          if (nb == "1" && ingredient1 == "0"){Total(1); ingredient1 = 1; document.getElementById("message1").innerHTML += (virgule + "Salsa"); virgule = ", "; SetIngredientsInField('1', 'Salsa');}
+          if (nb == "2" && ingredient2 == "0"){Total(1); ingredient2 = 1; document.getElementById("message1").innerHTML += (virgule + "Crème fraîche"); virgule = ", "; SetIngredientsInField('1', 'Crème fraîche');}
+          if (nb == "3" && ingredient3 == "0"){Total(1); ingredient3 = 1; document.getElementById("message1").innerHTML += (virgule + "Boursin"); virgule = ", "; SetIngredientsInField('1', 'Boursin');}
+          if (nb == "4" && ingredient4 == "0"){Total(1); ingredient4 = 1; document.getElementById("message1").innerHTML += (virgule + "Oeuf"); virgule = ", "; SetIngredientsInField('1', 'Oeuf');}
+        }
+
+      </script>
+
+    </div>   
+  </div>
+
+  <!-- Fromages -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">Fromages: (+0.80€)</b>
+      
+      <button class="btn btn-secondary dropdown-toggle float-right" data-toggle="dropdown">
+        Ingrédients
+      </button>
+      <div class="dropdown-menu" >
+        <a class="dropdown-item">
+        <button onclick="whichFromage('1')">Chèvre</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichFromage('2')">Reblochon</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichFromage('3')">Raclette</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichFromage('4')">Mozzarella</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichFromage('5')">Bleu</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichFromage('6')">Cheddar</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichFromage('7')">Vache qui rit</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichFromage('8')">Kiri</button>
+        </a>
+      </div>
+ 
+      <h5 id="message2"></h5> 
+
+      <script type="text/javascript">
+
+        var ingredient11 = 0;
+        var ingredient12 = 0;
+        var ingredient13 = 0;
+        var ingredient14 = 0;
+        var ingredient15 = 0;
+        var ingredient16 = 0;
+        var ingredient17 = 0;
+        var ingredient18 = 0;
+        var virgule1 = "";
+
+        function whichFromage(nb)
+        {
+          if (nb == "1" && ingredient11 == "0"){Total(0.80); ingredient11 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Chèvre"); virgule1 = ", "; SetIngredientsInField('2', 'Chèvre');}
+          if (nb == "2" && ingredient12 == "0"){Total(0.80); ingredient12 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Reblochon"); virgule1 = ", "; SetIngredientsInField('2', 'Reblochon');}
+          if (nb == "3" && ingredient13 == "0"){Total(0.80); ingredient13 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Raclette"); virgule1 = ", "; SetIngredientsInField('2', 'Raclette');}
+          if (nb == "4" && ingredient14 == "0"){Total(0.80); ingredient14 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Mozzarella"); virgule1 = ", "; SetIngredientsInField('2', 'Mozzarella');}
+          if (nb == "5" && ingredient15 == "0"){Total(0.80); ingredient15 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Bleu"); virgule1 = ", "; SetIngredientsInField('2', 'Bleu');}
+          if (nb == "6" && ingredient16 == "0"){Total(0.80); ingredient16 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Cheddar"); virgule1 = ", "; SetIngredientsInField('2', 'Cheddar');}
+          if (nb == "7" && ingredient17 == "0"){Total(0.80); ingredient17 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Vache qui rit"); virgule1 = ", "; SetIngredientsInField('2', 'Vache qui rit');}
+          if (nb == "8" && ingredient18 == "0"){Total(0.80); ingredient18 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Kiri"); virgule1 = ", "; SetIngredientsInField('2', 'Kiri');}
+          }
+
+      </script>
+
+    </div>   
+  </div>
+
+  <!-- Viandes -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">Viandes: (+1€)</b>
+      
+      <button class="btn btn-secondary dropdown-toggle float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Ingrédients
+      </button>
+      <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-col">
+        <a class="dropdown-item">
+        <button onclick="whichViandes('1')">Viande hachée</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('2')">Poulet</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('3')">Dinde fumée</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('4')">Chorizo</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('5')">Cordon bleu</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('6')">Tenders</button>
+        </a>
+      </div>
+      <div class="dropdown-col">
+        <a class="dropdown-item">
+        <button onclick="whichViandes('7')">Merguez</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('8')">Lardons</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('9')">Thon</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('10')">Bacon de dinde</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('11')">Saumon</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichViandes('12')">Crevettes</button>
+        </a>
+      </div>
+    </div>
+ 
+      <h5 id="message3"></h5> 
+
+      <script type="text/javascript">
+
+        var ingredient21 = 0;
+        var ingredient22 = 0;
+        var ingredient23 = 0;
+        var ingredient24 = 0;
+        var ingredient25 = 0;
+        var ingredient26 = 0;
+        var ingredient27 = 0;
+        var ingredient28 = 0;
+        var ingredient29 = 0;
+        var ingredient30 = 0;
+        var ingredient31 = 0;
+        var ingredient32 = 0;
+        var virgule2 = "";
+
+        function whichViandes(nb)
+        {
+          if (nb == "1" && ingredient21 == "0"){Total(1); ingredient21 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Viande hachée"); virgule2 = ", "; SetIngredientsInField('3', 'Viande hachée');}
+          if (nb == "2" && ingredient22 == "0"){Total(1); ingredient22 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Poulet"); virgule2 = ", "; SetIngredientsInField('3', 'Poulet');}
+          if (nb == "3" && ingredient23 == "0"){Total(1); ingredient23 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Dinde fumée"); virgule2 = ", "; SetIngredientsInField('3', 'Dinde fumée');}
+          if (nb == "4" && ingredient24 == "0"){Total(1); ingredient24 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Chorizo"); virgule2 = ", "; SetIngredientsInField('3', 'Chorizo');}
+          if (nb == "5" && ingredient25 == "0"){Total(1); ingredient25 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Cordon bleu"); virgule2 = ", "; SetIngredientsInField('3', 'Cordon bleu');}
+          if (nb == "6" && ingredient26 == "0"){Total(1); ingredient26 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Tenders"); virgule2 = ", "; SetIngredientsInField('3', 'Tenders');}
+          if (nb == "7" && ingredient27 == "0"){Total(1); ingredient27 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Merguez"); virgule2 = ", "; SetIngredientsInField('3', 'Merguez');}
+          if (nb == "8" && ingredient28 == "0"){Total(1); ingredient28 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Lardons"); virgule2 = ", "; SetIngredientsInField('3', 'Lardons');}
+          if (nb == "9" && ingredient29 == "0"){Total(1); ingredient29 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Thon"); virgule2 = ", "; SetIngredientsInField('3', 'Thon');}
+          if (nb == "10" && ingredient30 == "0"){Total(1); ingredient30 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Bacon de dinde"); virgule2 = ", "; SetIngredientsInField('3', 'Bacon de dinde');}
+          if (nb == "11" && ingredient31 == "0"){Total(1); ingredient31 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Saumon"); virgule2 = ", "; SetIngredientsInField('3', 'Saumon');}
+          if (nb == "12" && ingredient32 == "0"){Total(1); ingredient32 = 1; document.getElementById("message3").innerHTML += (virgule2 + "Crevettes"); virgule2 = ", "; SetIngredientsInField('3', 'Crevettes');}
+          }
+
+      </script>
+
+    </div>   
+  </div>
+
+  <!-- Légumes -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">Légumes: (+0.50€)</b>
+
+      <button class="btn btn-secondary dropdown-toggle float-right" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Ingrédients
+      </button>
+      <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton1">
+      <div class="dropdown-col">
+        <a class="dropdown-item">
+        <button onclick="whichLegume('1')">Oignons rouges</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichLegume('2')">Pommes de terre</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichLegume('3')">Champignons</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichLegume('4')">Salade</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichLegume('5')">Olives</button>
+        </a>
+      </div>
+      <div class="dropdown-col">
+        <a class="dropdown-item">
+        <button onclick="whichLegume('6')">Poivrons</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichLegume('7')">Maïs</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichLegume('8')">Tomates</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichLegume('9')">Oignons frits</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichLegume('10')">Galette de pommes de terre</button>
+        </a>
+      </div>
+    </div>
+ 
+      <h5 id="message4"></h5> 
+
+      <script type="text/javascript">
+
+        var ingredient41 = 0;
+        var ingredient42 = 0;
+        var ingredient43 = 0;
+        var ingredient44 = 0;
+        var ingredient45 = 0;
+        var ingredient46 = 0;
+        var ingredient47 = 0;
+        var ingredient48 = 0;
+        var ingredient49 = 0;
+        var ingredient40 = 0;
+        var virgule3 = "";
+
+        function whichLegume(nb)
+        {
+          if (nb == "1" && ingredient41 == "0"){Total(0.50); ingredient41 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Oignons rouges"); virgule3 = ", "; SetIngredientsInField('4', 'Oignons rouges');}
+          if (nb == "2" && ingredient42 == "0"){Total(0.50); ingredient42 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Pommes de terre"); virgule3 = ", "; SetIngredientsInField('4', 'Pommes de terre');}
+          if (nb == "3" && ingredient43 == "0"){Total(0.50); ingredient43 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Champignons"); virgule3 = ", "; SetIngredientsInField('4', 'Champignons');}
+          if (nb == "4" && ingredient44 == "0"){Total(0.50); ingredient44 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Salade"); virgule3 = ", "; SetIngredientsInField('4', 'Salade');}
+          if (nb == "5" && ingredient45 == "0"){Total(0.50); ingredient45 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Olives"); virgule3 = ", "; SetIngredientsInField('4', 'Olives');}
+          if (nb == "6" && ingredient46 == "0"){Total(0.50); ingredient46 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Poivrons"); virgule3 = ", "; SetIngredientsInField('4', 'Poivrons');}
+          if (nb == "7" && ingredient47 == "0"){Total(0.50); ingredient47 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Maïs"); virgule3 = ", "; SetIngredientsInField('4', 'Maïs');}
+          if (nb == "8" && ingredient48 == "0"){Total(0.50); ingredient48 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Tomates"); virgule3 = ", "; SetIngredientsInField('4', 'Tomates');}
+          if (nb == "9" && ingredient49 == "0"){Total(0.50); ingredient49 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Oignons frits"); virgule3 = ", "; SetIngredientsInField('4', 'Oignons frits');}
+          if (nb == "10" && ingredient40 == "0"){Total(0.50); ingredient40 = 1; document.getElementById("message4").innerHTML += (virgule3 + "Galette de pommes de terre"); virgule3 = ", "; SetIngredientsInField('4', 'Galette de pommes de terre');}
+        }
+
+      </script>
+
+    </div>   
+  </div>
+
+  <!-- Sauces -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">Sauces: (+0.20€)</b>
+      
+      <button class="btn btn-secondary dropdown-toggle float-right" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Ingrédients
+      </button>
+      <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton2">
+      <div class="dropdown-col">
+        <a class="dropdown-item">
+        <button onclick="whichSauce('1')">Ketchup</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('2')">Mayonnaise</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('3')">Moutarde</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('4')">Algérienne</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('5')">Blanche</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('6')">Burger</button>
+        </a>
+      </div>
+      <div class="dropdown-col">
+        <a class="dropdown-item">
+        <button onclick="whichSauce('7')">Barbecue</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('8')">Harissa</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('9')">Poivre</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('10')">Curry</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('11')">Brasil</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichSauce('12')">Samourai</button>
+        </a>
+      </div>
+    </div>
+ 
+      <h5 id="message5"></h5> 
+
+      <script type="text/javascript">
+
+        var ingredient51 = 0;
+        var ingredient52 = 0;
+        var ingredient53 = 0;
+        var ingredient54 = 0;
+        var ingredient55 = 0;
+        var ingredient56 = 0;
+        var ingredient57 = 0;
+        var ingredient58 = 0;
+        var ingredient59 = 0;
+        var ingredient50 = 0; 
+        var ingredient60 = 0;
+        var ingredient61 = 0;
+        var virgule4 = "";
+
+        function whichSauce(nb)
+        {
+          if (nb == "1" && ingredient51 == "0"){Total(0.20); ingredient51 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Ketchup"); virgule4 = ", "; SetIngredientsInField('5', 'Ketchup');}
+          if (nb == "2" && ingredient52 == "0"){Total(0.20); ingredient52 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Mayonnaise"); virgule4 = ", "; SetIngredientsInField('5', 'Mayonnaise');}
+          if (nb == "3" && ingredient53 == "0"){Total(0.20); ingredient53 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Moutarde"); virgule4 = ", "; SetIngredientsInField('5', 'Moutarde');}
+          if (nb == "4" && ingredient54 == "0"){Total(0.20); ingredient54 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Algérienne"); virgule4 = ", "; SetIngredientsInField('5', 'Algérienne');}
+          if (nb == "5" && ingredient55 == "0"){Total(0.20); ingredient55 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Blanche"); virgule4 = ", "; SetIngredientsInField('5', 'Blanche');}
+          if (nb == "6" && ingredient56 == "0"){Total(0.20); ingredient56 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Burger"); virgule4 = ", "; SetIngredientsInField('5', 'Burger');}
+          if (nb == "7" && ingredient57 == "0"){Total(0.20); ingredient57 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Barbecue"); virgule4 = ", "; SetIngredientsInField('5', 'Barbecue');}
+          if (nb == "8" && ingredient58 == "0"){Total(0.20); ingredient58 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Harissa"); virgule4 = ", "; SetIngredientsInField('5', 'Harissa');}
+          if (nb == "9" && ingredient59 == "0"){Total(0.20); ingredient59 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Poivre"); virgule4 = ", "; SetIngredientsInField('5', 'Poivre');}
+          if (nb == "10" && ingredient50 == "0"){Total(0.20); ingredient50 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Curry"); virgule4 = ", "; SetIngredientsInField('5', 'Curry');}
+          if (nb == "11" && ingredient60 == "0"){Total(0.20); ingredient60 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Brasil"); virgule4 = ", "; SetIngredientsInField('5', 'Brasil');}
+          if (nb == "12" && ingredient61 == "0"){Total(0.20); ingredient61 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Samourai"); virgule4 = ", "; SetIngredientsInField('5', 'Samourai');}
+          }
+
+      </script>
+
+    </div>   
+  </div>
+
+  <!-- Total -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b id="total" class="text5">Total:</b>
+      
+      <button class="btn btn-primary float-right">
+        <%= form_for @item_new do |f|%>
+          <%= f.hidden_field :name, value: 'Crêpe salée personnalisée' %> 
+          <%= f.hidden_field :content, :id => "hiddenRating"%>
+          <%= f.hidden_field :unit_price, :id => "price"%>
+          <%= f.hidden_field :quantity_quantity, value: '1' %> 
+          <%= f.submit "Ajouter au panier", :class => 'btnSansEffet' %>
+        <% end %>
+      </button>
+
+    <script type="text/javascript">
+
+      var euros = 3.50;
+
+      function Total(ee)
+      {
+        euros += ee;       
+        var num = SetDecimal(euros);
+        document.getElementById("total").innerHTML = ("Total: " + num + "€");
+        document.getElementById("price").value = num;
+      }
+
+    </script>
+
+    </div>   
+  </div>
+
+</div>

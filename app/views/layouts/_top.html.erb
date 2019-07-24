@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-0">
+    <div class="container-fluid">
+
+
+        <!-- Logo -->
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group effectHeader" role="group">
+            <%= link_to(image_tag("logo.png"), root_path) %>   
+            </div>
+        </div> 
+
+
+        <!-- Textes -->
+        <ul class="navbar-nav mx-auto">
+
+            <li class=" px-lg-4">
+                <h1 class= "text1">  
+                    Livraison & ouverture
+                </h1>
+                <h1 class= "text2"> 
+                    Lundi, mardi, mercredi, jeudi, vendredi et samedi
+                </h1>
+                <h1 class= "text2"> 
+                de <b> 11h30 à 23h <b class= "text3"> NON STOP </b> </b> (ouvert toute la journée)
+                </h1>
+                <h1 class= "text2"> 
+                    Dimanche de <b> 18h à 23h </b> 
+                </h1>
+            </li>
+
+            <li class=" px-lg-4">
+                <h1 class= "nb1">  
+                    03 51 24 38 96
+                </h1>
+                <h1 class= "text4"> 
+                    EN CAS DE SATURATION N'HÉSITEZ PAS À NOUS RAPPELER AU <!-- 'Logo-->
+                </h1>
+                <h1 class= "nb2"> 
+                    06 19 19 51 32
+                </h1>
+            </li>
+
+        </ul>
+
+
+        <!-- Panier -->
+        <%= link_to order_panier_path, :class => 'linkToSansEffect', :action => 'go' do %>
+            <div class="card-body bg-primary panierBouton effectHeader">
+                <label>
+                    <i class="fa fa-shopping-cart fa-2x panier" id="panierEuros"></i>
+                </label>
+                <h5 class="panier" id="panierArticles"></h5>
+            </div>
+        <% end %>
+
+
+        <!-- Space -->
+        <ul></ul>
+        
+
+    </div><!-- /.container-fluid -->
+</nav>
+
+<script type="text/javascript">
+
+    SetPanierEuros(<%= current_order.subtotal %>);
+    SetPanierArticles(<%= current_order.total %>);
+
+</script>
