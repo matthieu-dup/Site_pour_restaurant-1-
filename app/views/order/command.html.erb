@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card bg-default mt-5 py-2">    
+        <div class="card-body">       
+              
+            <%= form_tag({controller: "order", action: "sendmail"}, {method: "get"}) do %>
+                <h4> Nom : <%= text_field_tag :nomm, nil, :required => true %> </h4>
+                <h4> Prénom : <%= text_field_tag :prenom, nil, :required => true %> </h4>
+                <h4> Adresse : <%= text_field_tag :adresse, nil, :required => true %> </h4>
+                <h4> Code postal : <%= text_field_tag :codepostal, nil, :required => true %> </h4>
+                <h4> Ville : <%= text_field_tag :ville, nil, :required => true %> </h4>
+                <h4> Téléphone : <%= text_field_tag :telephone, nil, :required => true %> </h4>
+                <h4> Mail : <%= email_field_tag :mail, nil, :required => true %> </h4>
+                <h4> Payement : <%= select_tag :payement, options_for_select([ "Carte bancaire", "Espèces" ], "Espèces") %> </h4>
+                <%= hidden_field_tag :items, @items %> 
+                <button class="btn btn-primary linkToSansEffect float-right">
+                <%= submit_tag "Valider commande", :class => 'btnSansEffet' %>
+                </button>
+            <% end %>  
+          
+        </div>
+    </div>
+</div>

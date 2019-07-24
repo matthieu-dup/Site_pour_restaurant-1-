@@ -1,0 +1,411 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-4 mb-5" id="mainNav">
+  <div class="container">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csalee_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Crêpes salées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csucree_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Crêpes sucrées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_milkshake_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="activePage">    
+              Milkshake 
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_smoothie_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Smoothie  
+            </h3>              
+          <% end %>  
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <!-- Reduce screen -->
+  <div class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none">
+    <div class="container">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csalee_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Crêpes salées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csucree_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Crêpes sucrées  
+            </h3>              
+          <% end %>  
+        </li>
+        
+        <li class="nav-item px-lg-4">
+          <%= link_to home_milkshake_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="activePage2">    
+              Milkshake 
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_smoothie_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Smoothie  
+            </h3>              
+          <% end %>  
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Contents -->
+<div class="container"> 
+     
+  <!-- Image -->
+  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mb-5"> 
+    <%= image_tag("33.png", class:"activePageImage") %>          
+  </div>
+
+  <b class="text6">Milkshake : (1 base + 1 ingrédient : 3.90€)</b>
+
+  <!-- Bases -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">Bases: (+1€)</b>
+      
+      <button class="btn btn-secondary dropdown-toggle float-right" data-toggle="dropdown">
+        Ingrédients
+      </button>
+      <div class="dropdown-menu" >
+        <a class="dropdown-item">
+        <button onclick="whichBase('1')">Fraise</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichBase('2')">Chocolat</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichBase('3')">Vanille</button>
+        </a>
+      </div>
+ 
+      <h5 id="message5"></h5> 
+
+      <script type="text/javascript">
+
+        var ingredient51 = 0;
+        var ingredient52 = 0;
+        var ingredient53 = 0;
+        var virgule4 = "";
+
+        function whichBase(nb)
+        {
+          if (nb == "1" && ingredient51 == "0"){Total(1); ingredient51 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Fraise"); virgule4 = ", "; SetIngredientsInField('5', 'Fraise');}
+          if (nb == "2" && ingredient52 == "0"){Total(1); ingredient52 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Chocolat"); virgule4 = ", "; SetIngredientsInField('5', 'Chocolat');}
+          if (nb == "3" && ingredient53 == "0"){Total(1); ingredient53 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Vanille"); virgule4 = ", "; SetIngredientsInField('5', 'Vanille');}
+        }
+
+      </script>
+
+    </div>   
+  </div>
+
+  <!-- Ingrédients premium -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">Ingrédients premium: (+1€)</b>
+      
+      <button class="btn btn-secondary dropdown-toggle float-right" type="button" id="dropdownMenuButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Ingrédients
+      </button>
+      <div class="dropdown-menu dropdown-multicol4" aria-labelledby="dropdownMenuButton6">
+      <div class="dropdown-col4">
+        <a class="dropdown-item">
+        <button onclick="whichPremium('1')">Haribo chamallows</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('2')">Daim</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('3')">Chocapic</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('4')">Granola</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('5')">Lion</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('6')">Twix</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('7')">Oreo</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('8')">Miel pops</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('33')">Petit beurre</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('34')">Brownie</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('35')">Noix de coco</button>
+        </a>
+      </div>
+      <div class="dropdown-col4">
+        <a class="dropdown-item">
+        <button onclick="whichPremium('9')">Haribo</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('10')">Lotus</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('11')">St Michel</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('12')">Crunch</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('13')">Bounty</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('14')">Snickers</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('15')">Mars</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('30')">Palet breton</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('36')">Amandes</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('37')">Nutella</button>
+        </a>
+      </div>
+      <div class="dropdown-col4">
+        <a class="dropdown-item">
+        <button onclick="whichPremium('16')">Brownie</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('17')">m&m's</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('18')">KitKat</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('19')">Smarties</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('20')">Maltesers</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('21')">Frosties</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('22')">Kinder</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('31')">Coockies</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('38')">Noisette</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('39')">Confiture abricot</button>
+        </a>
+      </div>
+      <div class="dropdown-col4">
+        <a class="dropdown-item">
+        <button onclick="whichPremium('23')">Coockies</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('24')">Kinder Schoko-bons</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('25')">Nestlé galak</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('26')">Milka</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('27')">Kinder bueno white</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('28')">Kinder bueno</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('29')">Madeleine</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('32')">Caramal beurre salé</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('40')">Confiture fraise</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichPremium('41')">Confiture framboise</button>
+        </a>
+      </div>
+    </div>
+
+      <h5 id="message2"></h5> 
+
+      <script type="text/javascript">
+
+        var ingredient21 = 0;
+        var ingredient22 = 0;
+        var ingredient23 = 0;
+        var ingredient24 = 0;
+        var ingredient25 = 0;
+        var ingredient26 = 0;
+        var ingredient27 = 0;
+        var ingredient28 = 0;
+        var ingredient29 = 0;
+        var ingredient30 = 0;
+        var ingredient31 = 0;
+        var ingredient32 = 0;
+        var ingredient33 = 0;
+        var ingredient34 = 0;
+        var ingredient35 = 0;
+        var ingredient36 = 0;
+        var ingredient37 = 0;
+        var ingredient38 = 0;
+        var ingredient39 = 0;
+        var ingredient40 = 0;
+        var ingredient41 = 0;
+        var ingredient42 = 0;
+        var ingredient43 = 0;
+        var ingredient44 = 0;
+        var ingredient45 = 0;
+        var ingredient46 = 0;
+        var ingredient47 = 0;
+        var ingredient48 = 0;
+        var ingredient49 = 0;
+        var ingredient1 = 0;
+        var ingredient2 = 0;
+        var ingredient3 = 0;
+        var ingredient4 = 0;
+        var ingredient5 = 0;
+        var ingredient6 = 0;
+        var ingredient7 = 0;
+        var ingredient8 = 0;
+        var ingredient9 = 0;
+        var ingredient10 = 0;
+        var ingredient11 = 0;
+        var ingredient12 = 0;
+        var virgule1 = "";
+
+        function whichPremium(nb)
+        {
+          if (nb == "1" && ingredient21 == "0"){Total(1); ingredient21 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Haribo chamallows"); virgule1 = ", "; SetIngredientsInField('2', 'Haribo chamallows');}
+          if (nb == "2" && ingredient22 == "0"){Total(1); ingredient22 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Daim"); virgule1 = ", "; SetIngredientsInField('2', 'Daim');}
+          if (nb == "3" && ingredient23 == "0"){Total(1); ingredient23 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Chocapic"); virgule1 = ", "; SetIngredientsInField('2', 'Chocapic');}
+          if (nb == "4" && ingredient24 == "0"){Total(1); ingredient24 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Granola"); virgule1 = ", "; SetIngredientsInField('2', 'Granola');}
+          if (nb == "5" && ingredient25 == "0"){Total(1); ingredient25 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Lion"); virgule1 = ", "; SetIngredientsInField('2', 'Lion');}
+          if (nb == "6" && ingredient26 == "0"){Total(1); ingredient26 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Twix"); virgule1 = ", "; SetIngredientsInField('2', 'Twix');}
+          if (nb == "7" && ingredient27 == "0"){Total(1); ingredient27 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Oreo"); virgule1 = ", "; SetIngredientsInField('2', 'Oreo');}
+          if (nb == "8" && ingredient28 == "0"){Total(1); ingredient28 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Miel pops"); virgule1 = ", "; SetIngredientsInField('2', 'Miel pops');}
+          if (nb == "9" && ingredient29 == "0"){Total(1); ingredient29 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Haribo"); virgule1 = ", "; SetIngredientsInField('2', 'Haribo');}
+          if (nb == "10" && ingredient30 == "0"){Total(1); ingredient30 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Lotus"); virgule1 = ", "; SetIngredientsInField('2', 'Lotus');}
+          if (nb == "11" && ingredient31 == "0"){Total(1); ingredient31 = 1; document.getElementById("message2").innerHTML += (virgule1 + "St Michel"); virgule1 = ", "; SetIngredientsInField('2', 'St Michel');}
+          if (nb == "12" && ingredient32 == "0"){Total(1); ingredient32 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Crunch"); virgule1 = ", "; SetIngredientsInField('2', 'Crunch');}
+          if (nb == "13" && ingredient33 == "0"){Total(1); ingredient33 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Bounty"); virgule1 = ", "; SetIngredientsInField('2', 'Bounty');}
+          if (nb == "14" && ingredient34 == "0"){Total(1); ingredient34 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Snickers"); virgule1 = ", "; SetIngredientsInField('2', 'Snickers');}
+          if (nb == "15" && ingredient35 == "0"){Total(1); ingredient35 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Mars"); virgule1 = ", "; SetIngredientsInField('2', 'Mars');}
+          if (nb == "16" && ingredient36 == "0"){Total(1); ingredient36 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Brownie"); virgule1 = ", "; SetIngredientsInField('2', 'Brownie');}
+          if (nb == "17" && ingredient37 == "0"){Total(1); ingredient37 = 1; document.getElementById("message2").innerHTML += (virgule1 + "m&m's"); virgule1 = ", "; SetIngredientsInField('2', 'm&ms');}
+          if (nb == "18" && ingredient38 == "0"){Total(1); ingredient38 = 1; document.getElementById("message2").innerHTML += (virgule1 + "KitKat"); virgule1 = ", "; SetIngredientsInField('2', 'KitKat');}
+          if (nb == "19" && ingredient39 == "0"){Total(1); ingredient39 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Smarties"); virgule1 = ", "; SetIngredientsInField('2', 'Smarties');}
+          if (nb == "20" && ingredient40 == "0"){Total(1); ingredient40 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Maltesers"); virgule1 = ", "; SetIngredientsInField('2', 'Maltesers');}
+          if (nb == "21" && ingredient41 == "0"){Total(1); ingredient41 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Frosties"); virgule1 = ", "; SetIngredientsInField('2', 'Frosties');}
+          if (nb == "22" && ingredient42 == "0"){Total(1); ingredient42 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Kinder"); virgule1 = ", "; SetIngredientsInField('2', 'Kinder');}
+          if (nb == "23" && ingredient43 == "0"){Total(1); ingredient43 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Coockies"); virgule1 = ", "; SetIngredientsInField('2', 'Coockies');}
+          if (nb == "24" && ingredient44 == "0"){Total(1); ingredient44 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Kinder schoko-bons"); virgule1 = ", "; SetIngredientsInField('2', 'Kinder schoko-bons');}
+          if (nb == "25" && ingredient45 == "0"){Total(1); ingredient45 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Nestlé galak"); virgule1 = ", "; SetIngredientsInField('2', 'Nestlé galak');}
+          if (nb == "26" && ingredient46 == "0"){Total(1); ingredient46 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Milka"); virgule1 = ", "; SetIngredientsInField('2', 'Milka');}
+          if (nb == "27" && ingredient47 == "0"){Total(1); ingredient47 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Kinder bueno white"); virgule1 = ", "; SetIngredientsInField('2', 'Kinder bueno white');}
+          if (nb == "28" && ingredient48 == "0"){Total(1); ingredient48 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Kinder bueno"); virgule1 = ", "; SetIngredientsInField('2', 'Kinderr bueno');}
+          if (nb == "29" && ingredient49 == "0"){Total(1); ingredient49 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Madeleine"); virgule1 = ", "; SetIngredientsInField('2', 'Madeleine');}
+          if (nb == "30" && ingredient1 == "0"){Total(1); ingredient1 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Palet breton"); virgule1 = ", "; SetIngredientsInField('2', 'Palet breton');}
+          if (nb == "31" && ingredient2 == "0"){Total(1); ingredient2 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Coockies"); virgule1 = ", "; SetIngredientsInField('2', 'Coockies');}
+          if (nb == "32" && ingredient3 == "0"){Total(1); ingredient3 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Caramel beurre salé"); virgule1 = ", "; SetIngredientsInField('2', 'Caramel beurre salé');}
+          if (nb == "33" && ingredient4 == "0"){Total(1); ingredient4 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Petit beurre"); virgule1 = ", "; SetIngredientsInField('2', 'Petit beurre');}
+          if (nb == "34" && ingredient5 == "0"){Total(1); ingredient5 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Brownie"); virgule1 = ", "; SetIngredientsInField('2', 'Brownie');}
+          if (nb == "35" && ingredient6 == "0"){Total(1); ingredient6 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Noix de coco"); virgule1 = ", "; SetIngredientsInField('2', 'Noix de coco');}
+          if (nb == "36" && ingredient7 == "0"){Total(1); ingredient7 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Amandes"); virgule1 = ", "; SetIngredientsInField('2', 'Amandes');}
+          if (nb == "37" && ingredient8 == "0"){Total(1); ingredient8 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Nutella"); virgule1 = ", "; SetIngredientsInField('2', 'Nutella');}
+          if (nb == "38" && ingredient9 == "0"){Total(1); ingredient9 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Noisette"); virgule1 = ", "; SetIngredientsInField('2', 'Noisette');}
+          if (nb == "39" && ingredient10 == "0"){Total(1); ingredient10 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Confiture abricot"); virgule1 = ", "; SetIngredientsInField('2', 'Confiture abricot');}
+          if (nb == "40" && ingredient11 == "0"){Total(1); ingredient11 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Confiture fraise"); virgule1 = ", "; SetIngredientsInField('2', 'Confiture fraise');}
+          if (nb == "41" && ingredient12 == "0"){Total(1); ingredient12 = 1; document.getElementById("message2").innerHTML += (virgule1 + "Confiture framboise"); virgule1 = ", "; SetIngredientsInField('2', 'Confiture framboise');}
+          }
+
+      </script>
+
+    </div>   
+  </div>
+
+  <!-- Total -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b id="total" class="text5">Total:</b>
+      
+      <button class="btn btn-primary float-right">
+        <%= form_for @item_new do |f|%>
+          <%= f.hidden_field :name, value: 'Milkshake' %> 
+          <%= f.hidden_field :content, :id => "hiddenRating"%>
+          <%= f.hidden_field :unit_price, :id => "price"%>
+          <%= f.hidden_field :quantity_quantity, value: '1' %> 
+          <%= f.submit "Ajouter au panier", :class => 'btnSansEffet' %>
+        <% end %>
+      </button>
+
+    <script type="text/javascript">
+
+      var euros = 1.90;
+
+      function Total(ee)
+      {
+        euros += ee;       
+        var num = SetDecimal(euros);
+        document.getElementById("total").innerHTML = ("Total: " + num + "€");
+        document.getElementById("price").value = num;
+      }
+
+    </script>
+
+    </div>   
+  </div>
+
+</div>

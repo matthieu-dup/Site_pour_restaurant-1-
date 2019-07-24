@@ -1,0 +1,18 @@
+<%= @nomm %> <%= @prenom %>
+<%= @adresse %>
+<%= @codepostal %> <%= @ville %>
+<%= @telephone %>
+<%= @mail %>
+<%= @payement %>
+
+________________
+
+
+<% @each_item.each do |item| %>
+    -<%= item.name %> :
+    <%= item.content %>
+    Quantité : <%= item.quantity_quantity %>
+    Prix : <%= item.unit_price %> x <%= item.quantity_quantity %> = <%= number_with_precision(item.total, precision: 2) %> €
+<% end %>
+
+Total = <%= number_with_precision(@current_order.subtotal, precision: 2) %> €

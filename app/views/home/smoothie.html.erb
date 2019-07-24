@@ -1,0 +1,181 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-4 mb-5" id="mainNav">
+  <div class="container">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csalee_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Crêpes salées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csucree_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Crêpes sucrées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_milkshake_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Milkshake 
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_smoothie_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="activePage">    
+              Smoothie  
+            </h3>              
+          <% end %>  
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <!-- Reduce screen -->
+  <div class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none">
+    <div class="container">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csalee_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Crêpes salées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csucree_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Crêpes sucrées  
+            </h3>              
+          <% end %>  
+        </li>
+        
+        <li class="nav-item px-lg-4">
+          <%= link_to home_milkshake_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Milkshake 
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_smoothie_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="activePage2">    
+              Smoothie  
+            </h3>              
+          <% end %>  
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Contents -->
+<div class="container"> 
+     
+  <!-- Image -->
+  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mb-5"> 
+    <%= image_tag("44.png", class:"activePageImage") %>          
+  </div>
+
+  <b class="text6">Smoothie : (2 fruits + lait : 3.90€)</b>
+
+  <!-- Fruits -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b class="text5">Fruits: (+1€)</b>
+      
+      <button class="btn btn-secondary dropdown-toggle float-right" data-toggle="dropdown">
+        Ingrédients
+      </button>
+      <div class="dropdown-menu" >
+        <a class="dropdown-item">
+        <button onclick="whichBase('1')">Fraise</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichBase('2')">Framboise</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichBase('3')">Mangue</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichBase('4')">Banane</button>
+        </a>
+        <a class="dropdown-item">
+        <button onclick="whichBase('5')">Ananas</button>
+        </a>
+      </div>
+ 
+      <h5 id="message5"></h5> 
+
+      <script type="text/javascript">
+
+        var ingredient51 = 0;
+        var ingredient52 = 0;
+        var ingredient53 = 0;
+        var ingredient54 = 0;
+        var ingredient55 = 0;
+        var virgule4 = "";
+
+        function whichBase(nb)
+        {
+          if (nb == "1" && ingredient51 == "0"){Total(1); ingredient51 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Fraise"); virgule4 = ", "; SetIngredientsInField('5', 'Fraise');}
+          if (nb == "2" && ingredient52 == "0"){Total(1); ingredient52 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Framboise"); virgule4 = ", "; SetIngredientsInField('5', 'Framboise');}
+          if (nb == "3" && ingredient53 == "0"){Total(1); ingredient53 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Mangue"); virgule4 = ", "; SetIngredientsInField('5', 'Mangue');}
+          if (nb == "4" && ingredient54 == "0"){Total(1); ingredient54 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Banane"); virgule4 = ", "; SetIngredientsInField('5', 'Banane');}
+          if (nb == "5" && ingredient55 == "0"){Total(1); ingredient55 = 1; document.getElementById("message5").innerHTML += (virgule4 + "Ananas"); virgule4 = ", "; SetIngredientsInField('5', 'Ananas');}
+        }
+
+      </script>
+
+    </div>   
+  </div>
+
+  <!-- Total -->
+  <div class="card bg-default mt-5 py-2">    
+    <div class="card-body">
+
+      <b id="total" class="text5">Total:</b>
+      
+      <button class="btn btn-primary float-right">
+        <%= form_for @item_new do |f|%>
+          <%= f.hidden_field :name, value: 'Smoothie' %> 
+          <%= f.hidden_field :content, :id => "hiddenRating"%>
+          <%= f.hidden_field :unit_price, :id => "price"%>
+          <%= f.hidden_field :quantity_quantity, value: '1' %> 
+          <%= f.submit "Ajouter au panier", :class => 'btnSansEffet' %>
+        <% end %>
+      </button>
+
+    <script type="text/javascript">
+
+      var euros = 1.90;
+
+      function Total(ee)
+      {
+        euros += ee;       
+        var num = SetDecimal(euros);
+        document.getElementById("total").innerHTML = ("Total: " + num + "€");
+        document.getElementById("price").value = num;
+      }
+
+    </script>
+
+    </div>   
+  </div>
+
+</div>

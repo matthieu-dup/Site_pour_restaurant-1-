@@ -1,0 +1,19 @@
+<h3> <%= @nomm %> <%= @prenom %> </h3>
+<h3> <%= @adresse %> </h3>
+<h3> <%= @codepostal %> <%= @ville %> </h3>
+<h3> <%= @telephone %> </h3>
+<h3> <%= @mail %> </h3>
+<h3> <%= @payement %> </h3>
+
+<h1> ________________ </h1>
+
+<p>
+  <% @each_item.each do |item| %>
+    <h2> -<%= item.name %> :</h2>
+    <h3> <%= item.content %></h3>
+    <h3> Quantité : <%= item.quantity_quantity %> </h3>
+    <h3> Prix : <%= item.unit_price %> x <%= item.quantity_quantity %> = <%= number_with_precision(item.total, precision: 2) %> € </h3> 
+  <% end %>
+
+  <h2> Total = <%= number_with_precision(@current_order.subtotal, precision: 2) %> € </h2>
+</p>

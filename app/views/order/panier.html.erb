@@ -1,0 +1,189 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-4 mb-5" id="mainNav">
+  <div class="container">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csalee_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Crêpes salées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csucree_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Crêpes sucrées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_milkshake_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Milkshake 
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_smoothie_path, class: "secHeaderTxt", :action => 'go' do %>
+            <h3 class="secHeaderTxt">    
+              Smoothie  
+            </h3>              
+          <% end %>  
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <!-- Reduce screen -->
+  <div class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none">
+    <div class="container">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csalee_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Crêpes salées  
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_csucree_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Crêpes sucrées  
+            </h3>              
+          <% end %>  
+        </li>
+        
+        <li class="nav-item px-lg-4">
+          <%= link_to home_milkshake_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Milkshake 
+            </h3>              
+          <% end %>  
+        </li>
+
+        <li class="nav-item px-lg-4">
+          <%= link_to home_smoothie_path, class: "secHeaderTxt2", :action => 'go' do %>
+            <h3 class="secHeaderTxt2">    
+              Smoothie  
+            </h3>              
+          <% end %>  
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<% @each_item.each do |item| %>
+
+  <div class="container">
+    <div class="card bg-default mt-5 py-2">    
+      <div class="card-body">
+
+        <b class="text5"><%= item.name %></b>
+        
+        <h5  class="float-right">
+          <%= number_with_precision(item.unit_price, precision: 2) %> 
+          € &nbsp; x &nbsp;
+          <%= item.quantity_quantity %>
+          &nbsp; = &nbsp;
+          <%= number_with_precision(item.total, precision: 2) %> 
+          €
+        </h5>
+              
+        <h5><%= item.content %></h5>
+
+        &nbsp;
+          
+        <h5 class="float-left">
+
+        <button class="btn btn-primary linkToSansEffect">
+          <%= form_for item do |f| %>
+              
+            <%= link_to "Supprimer article", itemi_path(item), method: :delete, :class => 'linkToSansEffect' %>
+
+          <% end %>
+        </button>
+
+        </h5>
+
+        <h5 class="float-right">
+
+          <button class="btn btn-primary">
+            <%= form_for item do |f| %>
+
+              <%= f.hidden_field :item_id, :value => item.id %>
+              <%= f.hidden_field :quantity_quantity, :id => "quantity" %>
+              <%= f.submit "-", :class => 'btnSansEffet' %>
+              
+              <script type="text/javascript">
+                SetQuantityDown(<%= item.quantity_quantity %>);
+              </script>
+
+            <% end %>
+          </button>
+        
+          &nbsp; 
+          <%= item.quantity_quantity %>
+          &nbsp;
+
+          <button class="btn btn-primary">
+            <%= form_for item do |f| %>
+
+              <%= f.hidden_field :item_id, :value => item.id %>
+              <%= f.hidden_field :quantity_quantity, :value => (item.quantity_quantity + 1) %>
+              <%= f.submit "+", :class => 'btnSansEffet' %>
+              
+            <% end %>
+          </button>
+
+        </h5>
+          
+          
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+
+<% if @each_item.size != 0 %>
+  <div class="container">
+    <div class="card bg-default mt-5 py-2">    
+      <div class="card-body">    
+        <b class="text5"> Total = <%= number_with_precision(current_order.subtotal, precision: 2) %> € </b>             
+        <button class="btn btn-primary linkToSansEffect float-right">
+          <%= link_to "Commander", order_command_path, :class => 'linkToSansEffect' %>
+        </button>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<% if @each_item.size == 0 %>
+  <div class="container">
+    <div class="card bg-default mt-5 py-2">    
+      <div class="card-body">                
+        <b class="text5"> Aucun article </b> 
+      </div>
+    </div>
+    <div class="card bg-default mt-5 py-2 invisible">    
+      <div class="card-body">                
+      </div>
+    </div>
+    <div class="card bg-default mt-5 py-2 invisible">    
+      <div class="card-body">                
+      </div>
+    </div>
+  </div>
+<% end %>
