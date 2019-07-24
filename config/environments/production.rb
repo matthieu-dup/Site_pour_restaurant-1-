@@ -94,6 +94,10 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'site-restaurant-dm-freelance.herokuapp.com' }  
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
