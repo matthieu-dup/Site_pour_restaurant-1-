@@ -1,0 +1,112 @@
+function SetDecimal(euros)
+{
+    var n = euros.toFixed(2);
+    return n;
+}
+
+function SetPanierEuros(ee)
+{
+    if (ee == null){
+        document.getElementById("panierEuros").innerHTML = " 0.00 €";
+    }else{
+        ee = SetDecimal(ee);
+        document.getElementById("panierEuros").innerHTML = (" " + ee + " €");
+    }
+}
+function SetPanierArticles(ee)
+{
+    if (ee == 0 || ee == null){
+        document.getElementById("panierArticles").innerHTML = "0 article";
+    }else{
+        document.getElementById("panierArticles").innerHTML = (ee + " article(s)") ;
+    }
+}
+function SetQuantityDown(ee)
+{
+    if (ee <= 1){
+        document.getElementById("quantity").value = 1;
+    }else{
+        document.getElementById("quantity").value = (ee - 1);
+    }
+}
+
+var bases = "";
+var fromages = "";
+var viandes = "";
+var legumes = "";
+var sauces = "";
+function SetIngredientsInField(first, sec)
+{
+
+    if (first == 1)
+    {
+        if (bases == ""){
+            bases = sec;
+        }else{
+            bases += (", " + sec);
+        }
+    }
+    if (first == 2)
+    {
+        if (fromages == ""){
+            fromages = sec;
+        }else{
+            fromages += (", " + sec);
+        }
+    }
+    if (first == 3)
+    {
+        if (viandes == ""){
+            viandes = sec;
+        }else{
+            viandes += (", " + sec);
+        }
+    }
+    if (first == 4)
+    {
+        if (legumes == ""){
+            legumes = sec;
+        }else{
+            legumes += (", " + sec);
+        }
+    }
+    if (first == 5)
+    {
+        if (sauces == ""){
+            sauces = sec;
+        }else{
+            sauces += (", " + sec);
+        }
+    }
+
+
+    document.getElementById("hiddenRating").value = bases;
+    if (fromages != ""){
+        if (document.getElementById("hiddenRating").value == ""){
+            document.getElementById("hiddenRating").value = fromages;
+        }else{
+            document.getElementById("hiddenRating").value += (', ' + fromages);
+        }
+    }
+    if (viandes != ""){
+        if (document.getElementById("hiddenRating").value == ""){
+            document.getElementById("hiddenRating").value = viandes;
+        }else{
+            document.getElementById("hiddenRating").value += (', ' + viandes);
+        }
+    }
+    if (legumes != ""){
+        if (document.getElementById("hiddenRating").value == ""){
+            document.getElementById("hiddenRating").value = legumes;
+        }else{
+            document.getElementById("hiddenRating").value += (', ' + legumes);
+        }
+    }
+    if (sauces != ""){
+        if (document.getElementById("hiddenRating").value == ""){
+            document.getElementById("hiddenRating").value = sauces;
+        }else{
+            document.getElementById("hiddenRating").value += (', ' + sauces);
+        }
+    }
+}

@@ -1,0 +1,221 @@
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+/* Background */
+body
+{
+    background: url('background.jpg')no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* Header */
+.effectHeader:hover {
+  transition: all 0.125s;
+  margin-top: -.10rem;
+  margin-bottom: .10rem;
+}
+.effectHeader{
+  transition: all 0.125s;
+  margin-top: .10rem;
+  margin-bottom: -.10rem;
+}
+.text1 {
+  font-size: 165%;
+  text-align: center;
+  color: rgb(241, 35, 131);
+}
+.text2 {
+  font-size: 110%;
+  text-align: center;
+  color: white;
+}
+.text3 {
+  color: rgb(241, 35, 131);
+}
+.nb1 {
+  font-size: 220%;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(241, 35, 131);
+}
+.nb2 {
+  font-size: 180%;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(241, 35, 131);
+}
+.text4 {
+  font-size: 90%;
+  text-align: center;
+  color: white;
+}
+.panier {
+  color: white;
+  text-align: center;
+}
+.panierBouton {
+  font-size: 70%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding: 1rem;
+}
+.co {
+  font-size: 100%;
+  text-decoration: none !important;
+  color: white;
+} 
+.secHeaderTxt {
+  font-size: 120%;
+  text-decoration: none !important;
+  color: white;
+} 
+.secHeaderTxt:hover {
+  color: rgb(0, 132, 255);
+} 
+.activePage {
+  font-size: 120%;
+  text-decoration: none !important;
+  color: rgb(0, 132, 255);
+} 
+.activePageImage {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  max-width: 100%; 
+  height: auto; 
+} 
+.secHeaderTxt2 {
+  font-size: 100%;
+  text-decoration: none !important;
+  color: white;
+} 
+.secHeaderTxt2:hover {
+  color: rgb(0, 132, 255);
+} 
+.activePage2 {
+  font-size: 110%;
+  text-decoration: none !important;
+  color: rgb(0, 132, 255);
+} 
+label {
+  display: inline-block;
+  width: 100px;
+}​
+
+
+/* Footer */
+.bugé {
+  font-size: 80%;
+  color: rgb(241, 35, 131);
+} 
+.rose {
+  font-size: 80%;
+  color: rgb(241, 35, 131);
+}
+.crepes {
+  font-size: 80%;
+  color: rgb(0, 132, 255);
+} 
+#sticky-footer {
+  flex-shrink: none;
+}
+
+
+/* First page */
+.image {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  max-width: 100%; 
+  height: auto; 
+}
+.bouton {
+  font-size: 80%;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  padding: 1rem;
+}
+.bg {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.text {
+  font-size: 150%;
+  text-decoration: none !important;
+  color: black;
+} 
+.effect:hover {
+  transition: all 0.2s;
+  margin-top: -.25rem;
+  margin-bottom: .25rem;
+}
+.effect {
+  transition: all 0.2s;
+  margin-top: .25rem;
+  margin-bottom: -.25rem;
+}
+.effect:hover .bouton {
+  transition: all 0.2s;
+  opacity: 0.65;
+}
+.bouton {
+  transition: all 0.2s;
+  opacity: 1;
+}
+
+/* Salée Sucré Milkshake Smoothie */
+.text5 {
+  font-size: 140%;
+  color: black;
+} 
+.text6 {
+  font-size: 160%;
+  color: white;
+} 
+.btnSansEffet{
+  border:none;
+  background:none;
+  color: white;
+}
+.linkToSansEffect{
+  text-decoration: none !important;
+  color: white;
+}
+.linkToSansEffect:hover{
+  text-decoration: none !important;
+  color: white;
+}
+div.dropdown-multicol2{
+  width: 30em;
+}
+div.dropdown-multicol2>div.dropdown-col{
+  display:inline-block;
+  width: 45%;
+}
+div.dropdown-multicol2>div.dropdown-col2{
+  display:inline-block;
+  width: 32%;
+}
+div.dropdown-multicol3{
+  width: 35em;
+}
+div.dropdown-multicol3>div.dropdown-col3{
+  display:inline-block;
+  width: 20%;
+}
+div.dropdown-multicol4{
+  width: 42em;
+}
+div.dropdown-multicol4>div.dropdown-col4{
+  display:inline-block;
+  width: 20%;
+}
